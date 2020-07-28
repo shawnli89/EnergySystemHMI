@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>能源系统数据分析_n</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+<body>
+    <header>
+        <h1>能源系统数据分析</h1>
+        <div class="showTime">2020年3月17日  0时54分14秒</div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000); //開始运行
+            function time() {
+              clearTimeout(t); //清除定时器
+              dt = new Date();
+              var y = dt.getFullYear();
+              var mt = dt.getMonth() + 1;
+              var day = dt.getDate();
+              var h = dt.getHours(); //获取时
+              var m = dt.getMinutes(); //获取分
+              var s = dt.getSeconds(); //获取秒
+              document.querySelector(".showTime").innerHTML =
+                y +
+                "年" +
+                mt +
+                "月" +
+                day +
+                "日       " +
+                h +
+                "时" +
+                m +
+                "分" +
+                s +
+                "秒";
+              t = setTimeout(time, 1000); //设定定时器，循环运行
+            }
+        </script>
+    </header>
+    <!-- 页面主体-->
+    <section class="mainbox">
+        <div class="column">
+            <div class="panel line1">
+                <h2>北京市分时电价</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line2">
+                <h2>光伏与负荷曲线</h2>
+                <div class="chart">图表位置</div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="column"> 
+            <div class="panel">
+                <h2>
+                    能源系统结构图<br>
+                    <img src="images/structure.jpg" >
+                 </h2>
+                 <div class="panel-footer"></div>
+            </div> 
+            <div class="panel">
+                <h2>
+                    园区设备图<br>
+                    <img src="images/structure.jpg" >
+                 </h2>
+                 <div class="panel-footer"></div>
+            </div>              
+        </div>
+        <div class="column">
+            <div class="panel sankey1">
+                <h2>能源流 Sankey Map</h2>
+                <div class="chart">图表位置</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel sankey2">
+                <h2>价值流 Sankey Map</h2>
+                <div class="chart">图表位置</div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
